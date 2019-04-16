@@ -339,7 +339,7 @@ objects:
             GOGS_HOSTNAME="gogs-$CICD_NAMESPACE.$HOSTNAME"
 
             if [ "${EPHEMERAL}" == "true" ] ; then
-              oc new-app -f https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-docker/master/openshift/gogs-template.yaml \
+              oc new-app -f https://raw.githubusercontent.com/rlucente-se-jboss/gogs-openshift-docker/master/openshift/gogs-template.yaml \
                   --param=GOGS_VERSION=0.11.34 \
                   --param=HOSTNAME=$GOGS_HOSTNAME \
                   --param=SKIP_TLS_VERIFY=true
