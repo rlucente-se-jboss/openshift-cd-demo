@@ -363,6 +363,7 @@ objects:
                   --param SERVICE_ACCOUNT_NAMESPACE=$CICD_NAMESPACE --param=SERVICE_ACCOUNT_NAME=che-workspace | oc create -f -
 
               oc process -f https://raw.githubusercontent.com/minishift/minishift/master/addons/che/templates/che-server-template.yaml \
+                --param CHE_WORKSPACE_PLUGIN__REGISTRY__URL=https://che-plugin-registry.openshift.io \
                 --param ROUTING_SUFFIX=$HOSTNAME \
                 --param CHE_MULTIUSER=false \
                 --param CHE_INFRA_OPENSHIFT_PROJECT=$CICD_NAMESPACE \
